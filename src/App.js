@@ -1,10 +1,19 @@
 import "./styles.css";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from "./components/Home";
+import Login from "./components/Login";
+import Cart from "./components/Login";
+
 
 export default function App() {
   return (
-    <div className="App">
-      <h1>Hello CodeSandbox</h1>
-      <h2>Start editing to see some magic happen!</h2>
-    </div>
-  );
+    <BrowserRouter>
+      <Routes>
+        <Route exact path="/" element={<Home />}/>
+        <Route exact path="/login" element={<Login/>}/>
+        <Route exact path="/cart" element={<Cart/>}/>
+
+      </Routes>
+    </BrowserRouter>
+  )
 }
